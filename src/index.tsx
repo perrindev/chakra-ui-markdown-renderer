@@ -148,8 +148,11 @@ export const defaults: Defaults = {
   heading: props => {
     const { level, children } = props;
     const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
+    const anchor = `#${children.replace(/ /g, '-').toLowerCase()}`;
+    
     return (
       <Heading
+        id={anchor}
         my={4}
         as={`h${level}`}
         size={sizes[`${level - 1}`]}
